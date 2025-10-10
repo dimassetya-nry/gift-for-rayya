@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Happy birthday rayyaa! <3</title>
+    <title>Selamat Ulang Tahun, Sayang! ❤️</title>
     <style>
         body {
             font-family: 'Arial', sans-serif;
@@ -29,6 +29,16 @@
         @keyframes fadeIn {
             from { opacity: 0; transform: translateY(50px); }
             to { opacity: 1; transform: translateY(0); }
+        }
+        .foto {
+            width: 200px;
+            height: 200px;
+            border-radius: 50%;
+            object-fit: cover;
+            margin-bottom: 20px;
+            border: 5px solid #ff6b9d;
+            animation: fadeIn 2s ease-in-out;
+            box-shadow: 0 5px 15px rgba(255, 107, 157, 0.3);
         }
         h1 {
             color: #ff6b9d;
@@ -87,12 +97,15 @@
 </head>
 <body>
     <div class="container">
+        <!-- Tambahan Foto di Bagian Atas -->
+        <img src="foto-rayya.jpg" alt="Foto Rayya" class="foto">
+        
         <div class="cake">🎂</div>
-        <h1>Happy birthday rayyaa! <3</h1>
+        <h1>Selamat Ulang Tahun, Sayangku! ❤️</h1>
         <div class="heart">💕</div>
-        <p>happy birthday rayya!! sweet seventeenn semoga kedepannya jadi lebih baik lagi, dapat banyak temen, di lancarkan rezekinya, dan juga semoga masi sm aku HAHAHAHA</p>
-        <p>MAKASIH BANYAK!🎉</p>
-        <button onclick="showConfetti()">Coba pencet ini seru tauk 🎊</button>
+        <p>Selamat ulang tahun untuk pacar tercinta yang selalu membuat hari-hariku penuh warna. Semoga tahun ini penuh kebahagiaan, cinta, dan petualangan baru bersamaku. Aku sayang kamu selamanya! 😘</p>
+        <p>Terima kasih sudah jadi bagian dari hidupku. Mari rayakan hari spesial ini! 🎉</p>
+        <button onclick="showConfetti()">Rayakan Bersamaku! 🎊</button>
     </div>
 
     <div id="confetti"></div>
