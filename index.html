@@ -9,13 +9,13 @@
             font-family: 'Arial', sans-serif;
             background: linear-gradient(135deg, #ff9a9e 0%, #fecfef 50%, #fecfef 100%);
             margin: 0;
-            padding: 0;
+            padding: 20px; /* Tambah padding untuk ruang tepi */
             display: flex;
             justify-content: center;
-            align-items: center;
-            height: 100vh;
+            align-items: flex-start; /* Ubah dari center ke flex-start agar konten mulai dari atas */
+            min-height: 100vh; /* Ubah dari height ke min-height agar bisa expand */
             color: #333;
-            overflow: hidden;
+            overflow-y: auto; /* Enable scroll vertikal, hidden horizontal */
         }
         .container {
             text-align: center;
@@ -24,7 +24,11 @@
             border-radius: 20px;
             box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
             max-width: 500px;
+            width: 100%; /* Responsif full-width di mobile */
+            max-height: 90vh; /* Batasi tinggi agar tidak terlalu panjang */
+            overflow-y: auto; /* Scroll di dalam container jika terlalu panjang */
             animation: fadeIn 2s ease-in-out;
+            margin-top: 20px; /* Jarak dari atas layar */
         }
         @keyframes fadeIn {
             from { opacity: 0; transform: translateY(50px); }
@@ -39,6 +43,7 @@
             border: 5px solid #ff6b9d;
             animation: fadeIn 2s ease-in-out;
             box-shadow: 0 5px 15px rgba(255, 107, 157, 0.3);
+            max-width: 100%; /* Responsif di mobile */
         }
         h1 {
             color: #ff6b9d;
@@ -93,11 +98,21 @@
             pointer-events: none;
             z-index: 1000;
         }
+        /* Responsif untuk Mobile */
+        @media (max-width: 600px) {
+            .container {
+                padding: 20px;
+                margin: 10px;
+                max-height: none; /* Hilangkan batas tinggi di mobile */
+            }
+            h1 { font-size: 2em; }
+            .foto { width: 150px; height: 150px; }
+        }
     </style>
 </head>
 <body>
     <div class="container">
-        <!-- Tambahan Foto di Bagian Atas -->
+        <!-- Foto di Bagian Atas -->
         <img src="foto-rayya.jpg" alt="Foto Rayya" class="foto">
         
         <div class="cake">🎂</div>
@@ -112,7 +127,6 @@
 
     <script>
         function showConfetti() {
-            // Efek confetti sederhana menggunakan JS
             const confetti = document.getElementById('confetti');
             for (let i = 0; i < 100; i++) {
                 const flake = document.createElement('div');
@@ -125,13 +139,11 @@
                 flake.style.zIndex = '1001';
                 confetti.appendChild(flake);
 
-                // Hapus setelah animasi
                 setTimeout(() => {
                     flake.remove();
                 }, 5000);
             }
 
-            // Tambah CSS untuk animasi confetti
             const style = document.createElement('style');
             style.textContent = `
                 @keyframes fall {
